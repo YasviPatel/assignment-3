@@ -1,0 +1,33 @@
+header{
+    display: flex;
+    margin:20px;
+    border:2px solid black;
+    border-radius: 4px;
+    width:700px;
+}
+
+#dateobj{
+    display: flex;
+    flex-direction: row;
+}
+
+#date{
+    font-size:72px;
+}
+
+#daydiv{
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+}
+
+#selectButton{
+    display: flex;
+    flex-direction: row;
+    margin:23px;
+    padding-left: 3px;
+}
+
+label{
+    padding-top: 12px;
+}

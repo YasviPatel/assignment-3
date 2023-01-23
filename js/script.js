@@ -6,6 +6,9 @@ cn.then((response) => {
 }).then((data) => {
     console.log(data)
     const select = document.getElementById("countryDropDown");
+    let el1=document.createElement('option');
+    el1.textContent="All Places";
+    select.add(el1);
 for(var i = 0; i < data.city.length; i++) {
     const opt = data.city[i].name;
     let el = document.createElement("option");

@@ -4,27 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <div id="dateobj">
-        <p id="date"></p>
-        <p id="day"></p>
-        <p id="mnth"></p>
+    <div id="dateobj">
+        <div id="date"></div>
+        <div id="daydiv">
+        <span id="day"></span>
+        <span id="mnth"></span>
         </div>
-        <hr>
-        <label for="countries">Choose a country:</label>
+    </div>
+        
+        <div id="selectButton">
+        <p>Choose a city:&nbsp;&nbsp;</p>
         <select id="countryDropDown" onchange="fetchingTemp(this)"></select>
-        <div id="weather">
-            <p id="status"></p>
-            <p id="temp"></p>
-            <p id="icon"></p>
-            
         </div>
-        <hr>
-    </header>
+        <div>
+            <p>How many days?</p>
+            <select name="days">
+                <option value="choose">Choose a time duration</option>
+            <option value="one week">One week</option>
+        </select>
+        </div>
+    <div id="weather">
+        <p id="status"></p>
+        <p id="temp"></p>
+        <p id="icon"></p>
+    </div>
     <div id="cardContainer"></div>
     <script src="../js/script.js"></script>
 </body>
