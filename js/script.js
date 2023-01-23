@@ -1,9 +1,4 @@
 
-// document.addEventListener('DOMContentLoaded'),()=>{
-//     if(localStorage.getItem(cityName)){
-
-//     }
-// }
 const cn = fetch("https://raw.githubusercontent.com/Dipen-Dedania/static-data/main/india-popular-city.json");
 
 cn.then((response) => {
@@ -21,14 +16,8 @@ for(var i = 0; i < data.city.length; i++) {
 });
 
 
-// https://goweather.herokuapp.com/weather/${city}
-// api.openweathermap.org/data/2.5/weather?q=${city}&appid=add8a03a537edf8ad35013b54daa76d8
-
- 
 function fetchingTemp(select){
-         console.log(select.value);
-         let city=select.value;
-         localStorage.setItem("cityName",city);
+         const city=select.value;
          let weather=fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=9YUHX4EPRZT8SWMDXME7WWCQZ&contentType=json`);
          weather.then((response) => {
               return response.json();
@@ -36,7 +25,25 @@ function fetchingTemp(select){
             console.log(data);
             console.log(data.currentConditions.temp);
             let temp1=document.getElementById('temp');
-            temp1.innerHTML=data.currentConditions.temp ;
+            temp1.innerHTML=data.currentConditions.temp+"&#8451";
+            let temp2=document.getElementById('icon');
+            switch(data.currentConditions.icon){
+                case 'clear-day':
+                    temp2.innerHTML=`<img src="../icons/01d.png">`
+                    break;
+                case 'partly-cloudy-day':
+                    temp2.innerHTML=`<img src="../icons/02d.png">`
+                    break;
+                case 'cloudy':
+                    temp2.innerHTML=`<img src="../icons/04d.png">`
+                    break;
+                case 'clear-night':
+                    temp2.innerHTML=`<img src="../icons/01n.png">`
+                    break;
+                default:
+                    temp2.innerHTML=`<img src="../icons/unknown.png">`
+                    break;
+            }
 
          })
           
@@ -55,11 +62,6 @@ function fetchingTemp(select){
         console.log(element);
         let cardContainerItem=document.getElementById('cardContainer');
         for(let i=0;i<element.length;i++){
-            let cardItem={
-                cityName:element[i].cityName,
-                tourDate:element[i].tourDate
-
-            }
             let divElement=document.createElement('div');
             divElement.setAttribute('class', 'card');
             let divElementPara1=document.createElement('p');
@@ -78,13 +80,30 @@ function fetchingTemp(select){
             divElementPara4.setAttribute('class', 'temp');
             divElementPara4.textContent=element[i].temp;
             divElement.append(divElementPara4)
+            let divElementImg1=document.createElement('img');
+            divElementImg1.setAttribute('class', 'cityImgage');
+            divElementImg1.setAttribute('src',`${element[i].cityImg}`)
+            divElement.append(divElementImg1);
+            let divElementPara5=document.createElement('p');
+            divElementPara5.setAttribute('class', 'tourDate');
+            divElementPara5.textContent=element[i].tourDate;
+            divElement.append(divElementPara5);
+            let divElementPara6=document.createElement('p');
+            divElementPara6.setAttribute('class', 'price');
+            divElementPara6.textContent=element[i].price;
+            divElement.append(divElementPara6);
+            let divElementPara7=document.createElement('p');
+            divElementPara7.setAttribute('class', 'isBookmark');
+            divElementPara7.textContent=element[i].isBookmark;
+            divElement.append(divElementPara7);
             cardContainerItem.append(divElement);
             let hr=document.createElement('hr');
             cardContainerItem.append(hr);
-
         }
-        })
-    }
+    })
+}
+
+        
 
 
 fetchingCards();
