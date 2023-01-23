@@ -1,4 +1,9 @@
 
+// document.addEventListener('DOMContentLoaded'),()=>{
+//     if(localStorage.getItem(cityName)){
+
+//     }
+// }
 const cn = fetch("https://raw.githubusercontent.com/Dipen-Dedania/static-data/main/india-popular-city.json");
 
 cn.then((response) => {
@@ -23,6 +28,7 @@ for(var i = 0; i < data.city.length; i++) {
 function fetchingTemp(select){
          console.log(select.value);
          let city=select.value;
+         localStorage.setItem("cityName",city);
          let weather=fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=9YUHX4EPRZT8SWMDXME7WWCQZ&contentType=json`);
          weather.then((response) => {
               return response.json();
@@ -33,7 +39,6 @@ function fetchingTemp(select){
             temp1.innerHTML=data.currentConditions.temp ;
 
          })
-
           
         }
 
@@ -50,6 +55,11 @@ function fetchingTemp(select){
         console.log(element);
         let cardContainerItem=document.getElementById('cardContainer');
         for(let i=0;i<element.length;i++){
+            let cardItem={
+                cityName:element[i].cityName,
+                tourDate:element[i].tourDate
+
+            }
             let divElement=document.createElement('div');
             divElement.setAttribute('class', 'card');
             let divElementPara1=document.createElement('p');
