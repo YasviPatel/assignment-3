@@ -93,10 +93,10 @@ function fetchingTemp(select){
             divElementImg1.setAttribute('height','200fr');
             divElementImg1.setAttribute('width','100%');
             divElement.append(divElementImg1);
-            let divElementPara5=document.createElement('p');
-            divElementPara5.setAttribute('class', 'tourDate');
-            divElementPara5.textContent=element[i].tourDate;
-            divElement.append(divElementPara5);
+            // let divElementPara5=document.createElement('p');
+            // divElementPara5.setAttribute('class', 'tourDate');
+            // divElementPara5.textContent=element[i].tourDate;
+            // divElement.append(divElementPara5);
             let priceDiv=document.createElement('div');
             priceDiv.setAttribute('class','priceDiv');
             let totalPrice=document.createElement('div');

@@ -110,7 +110,7 @@ button:hover{
     border-radius: 7px;
     border-style: none;
     box-shadow: 0px 0px 5px rgb(190, 190, 190);
-    padding: 20px;
+    padding: 10px;
 }
 
 .weather img{
@@ -154,4 +154,5 @@ button:hover{
 }    
 
 .priceDiv button{
+        
 }
