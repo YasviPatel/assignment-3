@@ -1,3 +1,8 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 header{
     display: flex;
     margin:20px;
@@ -30,4 +35,123 @@ header{
 
 label{
     padding-top: 12px;
+}
+
+.mid-bar{
+
+    display: flex;
+    box-shadow: 0px 0px 5px rgb(190, 190, 190);
+    border-radius: 10px;
+}
+
+.mid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid rgb(163, 163, 163);
+    padding: 10px;
+}
+.mid:last-of-type{
+    border-right: none;
+}
+select, input{
+    border-style: none;
+    background-color: white;
+}
+input{
+    padding-top: 7px;
+}
+select:focus, input:focus{
+    border-style: none;
+}
+
+img{
+    display: flex;
+    padding: 10px;
+}
+.mid button{
+    display: flex;
+    padding: 14px;
+    margin: 6px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: rgb(255, 93, 120);
+    color: white;
+}
+img:hover{
+    cursor: pointer;
+}
+button:hover{
+    cursor: pointer;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+
+#cardContainer{
+    display: grid;
+    justify-content: space-around;
+    align-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.cardCon{
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    border-style: none;
+    box-shadow: 0px 0px 5px rgb(190, 190, 190);
+    padding: 20px;
+}
+
+.weather img{
+    display: flex;
+    size: 10px !important;
+}
+
+.card img{
+    border-radius: 20px;
+    justify-content: center;
+    margin-left: -10px;
+    display: flex;
+    object-fit: cover;
+}
+
+.card p{
+    padding: 3px;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+
+.upper p{
+        padding: 3px;
+        display: flex;
+        overflow: hidden;
+        flex-wrap: nowrap;
+        text-overflow: ellipsis;
+    }
+.priceDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+.tourDate{
+         display: flex;
+         font-size: small;
+}    
+
+.priceDiv button{
 }
