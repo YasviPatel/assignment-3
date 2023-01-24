@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="header">
-    <div id="dateobj">
+      <div id="dateobj">
         <div id="date"></div>
         <div id="daydiv">
-        <span id="day"></span>
-        <span id="mnth"></span>
+          <span id="day"></span>
+          <span id="mnth"></span>
         </div>
-    </div>
-        
-    <div class="mid-bar">
+      </div>
+
+      <div class="mid-bar">
         <div class="mid">
-        <p>Choose a city:&nbsp;&nbsp;</p>
-        <select id="countryDropDown" onchange="fetchingTemp(this)"></select>
+          <p>Choose a city:&nbsp;&nbsp;</p>
+          <select id="countryDropDown" onchange="fetchingTemp(this)"></select>
         </div>
         <div class="mid">
-            <p>How many days?</p>
-            <select name="days">
-                <option value="choose">Choose a time duration</option>
+          <p>How many days?</p>
+          <select name="days">
+            <option value="choose">Choose a time duration</option>
             <option value="one week">One week</option>
-        </select>
+          </select>
         </div>
         <div class="mid">
-            <p>Select date</p>
-            <input type="date">
+          <p>Select date</p>
+          <input type="date" />
         </div>
         <div class="mid">
-            <img src="360_F_239640633_yLPC1XJLLrPFzlWQYRIIB7Gs9fII2mpq.jpg" height="20px" width="20px" alt="filter">
+          <img
+            src="360_F_239640633_yLPC1XJLLrPFzlWQYRIIB7Gs9fII2mpq.jpg"
+            height="20px"
+            width="20px"
+            alt="filter"
+          />
         </div>
         <div class="mid">
-            <button><i class="fa fa-search"></i> Go!</button>
+          <button><i class="fa fa-search"></i> Go!</button>
         </div>
-    </div>
-    <div id="weather">
+      </div>
+      <div id="weather">
         <span id="city"></span>
         <span id="temp"></span>
         <span id="icon"></span>
+      </div>
     </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <div id="cardContainer"></div>
     <script src="../js/script.js"></script>
-</body>
+  </body>
 </html>
